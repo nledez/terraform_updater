@@ -1,0 +1,105 @@
+{
+  "serial": 5,
+  "resources": [
+    {
+      "type": "openstack_compute_instance_v2",
+      "name": "the_vm_in_terraform",
+      "instances": [
+        {
+          "attributes": {
+            "access_ip_v4": "12.34.45.67",
+            "access_ip_v6": "[2001:1234::abcd]",
+            "id": "4b450ea7-c5b4-44a5-95d7-b3266a3e1ed1",
+            "name": "an-openstack-vm",
+            "network": [
+              {
+                "access_network": false,
+                "fixed_ip_v4": "12.34.45.67",
+                "fixed_ip_v6": "[2001:1234::abcd]",
+                "floating_ip": "",
+                "mac": "fa:fa:fa:fa:fa:fa",
+                "name": "Ext-Net",
+                "port": "",
+                "uuid": "0f48a800-bd0d-43e8-88ae-c735f35097eb"
+              },
+              {
+                "access_network": false,
+                "fixed_ip_v4": "192.168.42.42",
+                "fixed_ip_v6": "",
+                "floating_ip": "",
+                "mac": "fc:fc:fc:fc:fc:fc",
+                "name": "priv",
+                "port": "",
+                "uuid": "f31d734e-5ac5-49c3-8f44-f5d933e00685"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "openstack_compute_instance_v2",
+      "name": "the_other_vm_in_terraform",
+      "instances": [
+        {
+          "attributes": {
+            "access_ip_v4": "12.34.45.89",
+            "access_ip_v6": "[2001:1234::4321]",
+            "id": "1b4a90d8-96bb-4885-a1f7-4d07118ec7e1",
+            "name": "another-openstack-vm",
+            "network": [
+              {
+                "access_network": false,
+                "fixed_ip_v4": "12.34.45.69",
+                "fixed_ip_v6": "[2001:1234::4321]",
+                "floating_ip": "",
+                "mac": "fa:fa:fa:fa:ab:ba",
+                "name": "Ext-Net",
+                "port": "",
+                "uuid": "e2333091-8fc8-4058-b133-2b1f7aec747c"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "openstack_networking_port_v2",
+      "name": "the_other_vm_in_terraform_public",
+      "instances": [
+        {
+          "attributes": {
+            "all_fixed_ips": [
+              "2001:1234::4321",
+              "12.34.45.89"
+            ],
+            "device_id": "1b4a90d8-96bb-4885-a1f7-4d07118ec7e1",
+            "id": "62ba2fca-4d32-4301-b265-0b7f985fd3cb",
+            "mac_address": "fa:fa:fa:fa:ab:ba",
+            "name": "the_other_vm_in_terraform_public"
+          }
+        }
+      ]
+    },
+    {
+      "type": "openstack_networking_port_v2",
+      "name": "the_vm_in_terraform_priv",
+      "instances": [
+        {
+          "attributes": {
+            "all_fixed_ips": [
+              "192.168.42.42"
+            ],
+            "device_id": "4b450ea7-c5b4-44a5-95d7-b3266a3e1ed1",
+            "id": "fd4bd4b4-7f48-4e62-bc2e-3dc68f218caa",
+            "mac_address": "fc:fc:fc:fc:fc:fc",
+            "name": "the_vm_in_terraform_priv"
+          }
+        }
+      ]
+    },
+    {
+      "type": "openstack_blockstorage_volume_v2"
+    }
+  ]
+}

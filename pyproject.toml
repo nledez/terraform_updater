@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "terraform-updater"
+version = "0.1.0"
+description = "Help to migrate terraform state to OpenStack Stein (may be only at OVH)"
+authors = ["Nicolas Ledez"]
+license = "AGPL"
+readme = "README.md"
+# packages = [{include = "terraform_openstack_stein_migration_helper"}]
+
+[tool.poetry.dependencies]
+python = ">= 3.8.10"
+python-novaclient = "^18.2.0"
+python-keystoneclient = "^5.0.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+pytest-md = "^0.2.0"
+pytest-emoji = "^0.2.0"
+coveralls = "^3.3.1"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+pytest-watch = "^4.2.0"
+black = "^22.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
