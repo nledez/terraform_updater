@@ -60,6 +60,8 @@ class TerraformUpdater:
         if not init_only:  # pragma: no cover
             self.collect_os_data()
             self.parse_state()
+            self.check_and_extract_vm()
+            self.update_state()
 
     def collect_os_data(self):
         if self.os_client is False:

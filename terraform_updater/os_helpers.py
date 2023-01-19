@@ -17,9 +17,15 @@ class OSHelper:  # pragma: no cover
         )
 
     def server_list(self, os_search_pattern):
-        return self.nova.servers.list(
+        servers = []
+        for server in self.nova.servers.list(
             detailed=True, search_opts={"name": os_search_pattern}
-        )
+        ):
+            servers.append({
+                "name": server.name,
+                "id": server.id,
+            })
+        return servers
 
     def interfaces_list(self, server_id):
         ports = {}
